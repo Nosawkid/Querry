@@ -26,7 +26,8 @@ export const uploadDocument = async (req, res, next) => {
     const newDoc = new Document({
         userId: req.user._id,
         title: req.file.originalname,
-        content: fullText
+        content: fullText,
+        processing: "completed"
     })
 
     await newDoc.save()
